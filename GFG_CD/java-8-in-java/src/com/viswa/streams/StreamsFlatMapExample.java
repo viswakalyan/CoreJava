@@ -1,0 +1,39 @@
+package com.viswa.streams;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.viswa.data.Student;
+import com.viswa.data.StudentDataBase;
+
+public class StreamsFlatMapExample {
+
+	public static List<String> printStudentActivities(){
+
+        List<String> studentActivities = StudentDataBase.getAllStudents().stream() //Stream<Student>
+                .map(Student::getActivities) //Stream<List<String>
+                .flatMap(List::stream) //Stream<String>
+                .collect(Collectors.toList());
+
+        return studentActivities;
+    }
+
+	public static Set<String> printSetStudentActivities(){
+
+        List<String> studentActivities = StudentDataBase.getAllStudents().stream() //Stream<Student>
+                .map(Student::getActivities) //Stream<List<String>
+                .flatMap(List::stream) //Stream<String>
+                .collect(Collectors.toList());
+Set<String> studentActivitiesSet=new HashSet<>(studentActivities);
+        return studentActivitiesSet;
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println("printStudentActivities : " + printStudentActivities());
+        System.out.println("printSetStudentActivities : " + printSetStudentActivities());
+    }
+	
+}

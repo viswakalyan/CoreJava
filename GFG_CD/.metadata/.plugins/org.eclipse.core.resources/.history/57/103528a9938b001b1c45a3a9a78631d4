@@ -1,0 +1,8 @@
+package com.viswa.cowal;
+
+public class COWALExample {
+
+	public static void main(String[] args) {
+		
+	}
+}

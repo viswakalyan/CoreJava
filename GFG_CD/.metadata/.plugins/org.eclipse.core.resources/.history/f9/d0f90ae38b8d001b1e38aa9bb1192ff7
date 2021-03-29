@@ -1,0 +1,9 @@
+package com.viswa.functionalInterfaces;
+
+public class ConsumerExample {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.viswa.lambdasVariables;
+
+import java.util.function.Consumer;
+
+public class LambdaVariable1 {
+	
+	 public static void main(String[] args) {
+
+	        int i =0;
+//here parameter passed in the lambda expression should not be the same as local variable
+	        
+	        //we caanot declase same local varaible inside lamda body
+	        Consumer<Integer> c1 = (i1) -> {
+
+	            System.out.println("Value is : "+ i);
+	        };
+	    }
+
+}

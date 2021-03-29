@@ -1,0 +1,19 @@
+package com.viswa.functionalInterfaces;
+
+import java.util.function.Consumer;
+
+import com.viswa.data.Student;
+
+public class ConsumerExample {
+
+	static Consumer<Student> c1=p->System.out.println(p);
+	
+	
+	
+	public static void main(String[] args) {
+		Consumer<String> consumer = (s) -> System.out.println(s.toUpperCase());
+		consumer.accept("java8");
+
+	}
+
+}
